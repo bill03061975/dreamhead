@@ -243,15 +243,6 @@ static function kanban_load($page) {
         //});</script>";
         return;
     }
-    if ($page=="dhr_frominet") {
-        $link=$_POST['link'];
-        $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL,$link);
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        $result = curl_exec($ch); $httpcodeping = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
-        /*статус*/if ($httpcodeping!="200") { echo $httpcodeping; } else {  echo "OK";  }
-        return;
-    }
     if ($page=="dhr_edit") {
         $dhr_id=(int)$_POST['dhr_id'];
         $resDhr=DoSql("SELECT * FROM dh_resumes JOIN dh_statuses ON dhr_dhs_id=dhs_id  WHERE dhr_id='{$dhr_id}'"); if ($rowDhr=$resDhr->fetch_assoc()) {  } else { return; }
