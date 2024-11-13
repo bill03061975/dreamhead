@@ -4,6 +4,6 @@
     $GLOBALS['dbname']="delta_dream";
     $GLOBALS['dbuser']="root";
     $GLOBALS['dbpassword']=UserPassFromHostConf($GLOBALS['dbuser']);
-    $GLOBALS['bof']="/home/bingosites/files/dream/";
+    $GLOBALS['bof']="/home/files/dream/";
 
 ?>
